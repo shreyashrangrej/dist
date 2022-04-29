@@ -1,0 +1,54 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form"
+	xmlns:core="sap.ui.core">
+    <Dialog title="Create Employee Form">
+		<f:SimpleForm id="idForm"
+			editable="true"
+			layout="ResponsiveGridLayout"
+			labelSpanXL="3"
+			labelSpanL="3"
+			labelSpanM="3"
+			labelSpanS="12"
+			adjustLabelSpan="false"
+			emptySpanXL="4"
+			emptySpanL="4"
+			emptySpanM="4"
+			emptySpanS="0"
+			columnsXL="1"
+			columnsL="1"
+			columnsM="1"
+			singleContainerFullSize="false" >
+			<f:content>
+				<Label text="Personnel Number" />
+				<Input id="idPersonnelNumber" value="" type="Number" />
+
+				<Label text="First Name" />
+				<Input id="idFirstName" value="" />
+
+                <Label text="Last Name" />
+				<Input id="idLastName" value="" />
+
+				<Label text="Date Of Birth" />
+				<DatePicker id="idDateOfBirth" value="" displayFormat="dd.MM.yyyy" valueFormat="dd.MM.yyyy" />
+
+				<Label text="Age" />
+				<Input id="idAge" value="" />
+
+				<Label text="Gender" />
+				<Select id="idGender" selectedKey="">
+					<items>
+						<core:Item text="Male" key="male"/>
+						<core:Item text="Female" key="female"/>
+						<core:Item text="Other" key="other"/>
+					</items>
+				</Select>
+			</f:content>
+		</f:SimpleForm>
+		<buttons>
+			<Button text="Create Employee" type="Accept" press="onCreateEmployee"/>
+			<Button text="Close" press="onClose" type="Emphasized"/>
+		</buttons>
+        </Dialog>
+</core:FragmentDefinition>

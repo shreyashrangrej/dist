@@ -1,0 +1,54 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form"
+	xmlns:core="sap.ui.core">
+    <Dialog title="Update Employee Form">
+		<f:SimpleForm id="idFormEdit"
+			editable="true"
+			layout="ResponsiveGridLayout"
+			labelSpanXL="3"
+			labelSpanL="3"
+			labelSpanM="3"
+			labelSpanS="12"
+			adjustLabelSpan="false"
+			emptySpanXL="4"
+			emptySpanL="4"
+			emptySpanM="4"
+			emptySpanS="0"
+			columnsXL="1"
+			columnsL="1"
+			columnsM="1"
+			singleContainerFullSize="false" >
+			<f:content>
+				<Label text="Personnel Number" />
+				<Input id="idPersonnelNumberEdit" value="" type="Number" editable="false" />
+
+				<Label text="First Name" />
+				<Input id="idFirstNameEdit" value="" />
+
+                <Label text="Last Name" />
+				<Input id="idLastNameEdit" value="" />
+
+				<Label text="Date Of Birth" />
+				<DatePicker id="idDateOfBirthEdit" value="" displayFormat="dd.MM.yyyy" valueFormat="dd.MM.yyyy" />
+
+				<Label text="Age" />
+				<Input id="idAgeEdit" value="" />
+
+				<Label text="Gender" />
+				<Select id="idGenderEdit" selectedKey="">
+					<items>
+						<core:Item text="Male" key="male"/>
+						<core:Item text="Female" key="female"/>
+						<core:Item text="Other" key="other"/>
+					</items>
+				</Select>
+			</f:content>
+		</f:SimpleForm>
+		<buttons>
+			<Button text="Update Employee" type="Accept" press="onUpdateEmployee"/>
+			<Button text="Close" press="onCloseEdit" type="Emphasized"/>
+		</buttons>
+        </Dialog>
+</core:FragmentDefinition>

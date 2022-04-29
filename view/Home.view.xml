@@ -1,0 +1,82 @@
+<mvc:View controllerName="com.app.Application.controller.Home"
+	xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+	xmlns="sap.m"
+	xmlns:f="sap.f"
+	xmlns:t="sap.ui.table">
+	<App id="app">
+		<pages>
+			<Page id="page" title="{i18n>title}" showHeader="false">
+				<content>
+					<f:ShellBar title="Employee Protal" secondTitle="Create | Delete | Update Employees" showCopilot="true">
+						<f:profile>
+							<Avatar initials="UI"/>
+						</f:profile>
+						<f:searchManager>
+							<f:SearchManager id="searchField" search="handlerSearchFieldSearch" liveChange="handlerSearchFieldLiveEvent" suggest="handlerSearchSuggestEvent" enableSuggestions="true">
+								<f:suggestionItems>
+									<SuggestionItem text="" description="" key=""/>
+								</f:suggestionItems>
+							</f:SearchManager>
+						</f:searchManager>
+					</f:ShellBar>
+
+					<Toolbar>
+						<Button text="Create Employee" type="Accept" icon="sap-icon://add" press="onCreate" />
+						<Button text="Delete Employee" type="Reject" icon="sap-icon://delete" press="onDelete" />
+					</Toolbar>
+
+					<t:Table id="idTable" selectionMode="MultiToggle" visibleRowCount="7" rows="{tableModel>/}" >
+						<t:columns>
+							<t:Column hAlign="Center">
+								<Label text="Personnel Number" />
+								<t:template>
+									<Input value="{tableModel>pernr}" />
+								</t:template> 
+							</t:Column>
+							<t:Column hAlign="Center">
+								<Label text="First Name" />
+								<t:template>
+									<Input value="{tableModel>firstName}" />
+								</t:template> 
+							</t:Column>
+							<t:Column hAlign="Center">
+								<Label text="Last Name" />
+								<t:template>
+									<Input value="{tableModel>lastName}" />
+								</t:template> 
+							</t:Column>
+							<t:Column hAlign="Center">
+								<Label text="Date Of Birth" />
+								<t:template>
+									<DatePicker value="{tableModel>dateOfBirth}" displayFormat="dd.MM.yyyy" valueFormat="dd.MM.yyyy" />
+								</t:template> 
+							</t:Column>
+							<t:Column hAlign="Center">
+								<Label text="Age" />
+								<t:template>
+									<Input value="{tableModel>age}" />
+								</t:template> 
+							</t:Column>
+							<t:Column hAlign="Center">
+								<Label text="Gender" />
+								<t:template>
+									<Input value="{tableModel>gender}" />
+								</t:template> 
+							</t:Column>
+							<t:Column hAlign="Center" width="75px">
+								<Label text="Edit" />
+								<t:template>
+									<Button icon="sap-icon://edit" type="Accept" press="onEdit" />
+								</t:template> 
+							</t:Column>
+						</t:columns>
+					</t:Table>
+				</content>
+				<footer>
+					<Toolbar>
+					</Toolbar>
+				</footer>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>
